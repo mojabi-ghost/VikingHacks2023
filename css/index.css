@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+body {
+  background-color: #278AB0;
+}
+
+/* header */
+header {
+  margin: 0%;
+  background-color: #1DC690;
+  padding: 4%;
+  text-align: center;
+}
+.logo {
+  width: 15%;
+  border-radius: 100%;
+}
+nav {
+  display: none;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  list-style: none;
+  padding: 0 3%; /* fix this padding */
+}
+
+/* section 1 */
+h2 {
+  margin-top: 5%;
+  text-align: center;
+}
+
+/* section 2 */
+.section2 {
+  width: 50vw;
+  height: 50vh;
+  margin: 5% auto 5% auto;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAE0;
+}
+.make {
+  display: block;
+}
+.make-wrapper {
+  margin: 0 auto;
+}
+.model {
+  display: block;
+}
+.model-wrapper {
+  margin: 0 auto;
+}
+.distance {
+  display: block;
+}
+.distance-wrapper {
+  margin: 0 auto;
+}
+.fuel {
+  display: block;
+}
+.fuel-wrapper {
+  margin: 0 auto;
+}
+#form-wrapper {
+  margin: 15% 0;
+  color: #278AB0;
+}
+.submit-button {
+  margin: 5% auto;
+}
+
+/* section 3 */
+.section3 {
+  background-color: #1C4670;
+  color: #fff;
+  padding: 5%;
+}
+h3 {
+  margin: 3% 5%;
+}
+p {
+  margin: 2% 5%;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 4%;
+  background-color: #296831;
+  color: #fff;
+}
+
+@media screen and (min-width: 720px) {
+  /* header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #nav-link {
+    text-decoration: none;
+    color: #fff;
+  }
+  /* section 1 */
+  .section1 {
+    font-size: 200%;
+  }
+  /* section 2 */
+  .section2 {
+    background-color: #278AB0;
+    border-style: none;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-wrapper {
+    color: white;
+    background-color: 
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
