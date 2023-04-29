@@ -50,10 +50,10 @@ h2 {
   align-items: center;
   background-color: #EAEAE0;
 }
-.make {
+.kWh {
   display: block;
 }
-.make-wrapper {
+.kWh-wrapper {
   margin: 0 auto;
 }
 .model {
