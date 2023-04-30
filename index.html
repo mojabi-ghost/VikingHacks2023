@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./css/index.css" rel="stylesheet">
+  <script src="./js/climateAPI.js" defer></script>
   <title>Document</title>
 </head>
 <body>
@@ -26,24 +27,30 @@
     </section>
 
     <section class="section2">
-      <form >
-        <div class="kWh-wrapper" id="form-wrapper">
-          <label for="kWh" class="kWh">kWh that were used this month: </label>
-          <input type="text" id="kWh" name="vehicle">
+      <div id="section2-wrapper">
+        <div class="input-wrapper">
+          <div class="distance-wrapper" id="form-wrapper">
+            <div id="input-label-wrapper">
+              <label for="distance" class="distance">Distance traveled: </label>
+              <input type="text" id="distance" name="vehicle">
+            </div>
+          </div>
+          <div class="vehicle-wrapper" id="form-wrapper">
+            <div id="input-label-wrapper">
+              <label for="vehicle" class="vehicle">Vehicle type (car or motorcycle): </label>
+              <input type="text" id="vehicle" name="vehicle">
+            </div>
+          </div>
         </div>
-        <div class="vehicle-wrapper" id="form-wrapper">
-          <label for="vehicle" class="vehicle">Enter your vehicle type (1) for passenger vehicle, (2) for pickup/SUV, (3) for motorcycle: </label>
-          <input type="text" id="vehicle" name="vehicle">
-        </div>
-        <div class="money-wrapper" id="form-wrapper">
-          <label for="money" class="money">Enter the amount of vehicle (in USD) spent on gas this month: : </label>
-          <input type="text" id="money" name="money">
-        </div>
-        <div class="fuel-wrapper" id="form-wrapper">
-          <label for="fuel" class="fuel">Fuel efficiency: </label>
-          <input type="text" id="fuel" name="fuel">
-        </div>
-        <button class="submit-button">Submit</button>
+        <button class="submit-button" onclick="submitButton()">Submit</button>
+      </div>
+
+      <section id="section4">
+        <h3>Results: </h3>
+        <p id="distance-results">Distance traveled:</p>
+        <p id="vehicle-results">Vehicle type:</p>
+        <p id="carbon-results">Your Carbon Footprint: </p>
+      </section>
       </form>
     </section>
 
@@ -55,10 +62,10 @@
         waste management, to provide a comprehensive analysis of one's carbon footprint. By using a carbon footprint calculator, 
         individuals and organizations can become more aware of their impact on the environment and take steps to reduce their emissions.</p>
     </section>
+
   </main>
   <footer>
     <p>Viking Hacks 2023</p>
   </footer>
-  <script src="file.js" type="module"></script>
 </body>
 </html>
