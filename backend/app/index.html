@@ -1,0 +1,311 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="./js/climateAPI.js" defer></script>
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+body {
+  background-color: #278AB0;
+}
+
+/* header */
+header {
+  margin: 0%;
+  background-color: #1DC690;
+  padding: 4%;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.logo {
+  width: 15%;
+  border-radius: 100%;
+}
+nav {
+  display: none;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  list-style: none;
+  padding: 0 3%; /* fix this padding */
+}
+
+/* section 1 */
+h2 {
+  margin: 5% 5% 0 5%;
+  text-align: center;
+}
+
+/* section 2 */
+.section2 {
+
+  margin: 5% auto 5% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAEAE0;
+  border-radius: 10px;
+  box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68);
+  -webkit-box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68);
+  -moz-box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68)
+}
+.distance {
+  display: block;
+  margin: 5%;
+}
+.distance-wrapper {
+  margin: 0 auto;
+}
+.vehicle {
+  display: block;
+  margin: 5%;
+}
+.vehicle-wrapper {
+  margin: 0 auto;
+}
+.money {
+  display: block;
+  margin: 5%;
+}
+.money-wrapper {
+  margin: 0 auto;
+}
+#form-wrapper {
+  text-align: center;
+  margin: 15% 0;
+  color: #278AB0;
+  font-size: 120%;
+}
+.submit-button {
+  display: block;
+  margin: 5% auto;
+  width: 40%;
+  border-radius: 50px;
+  height: 25px;
+  border-style: none;
+  background-color: #278AB0;
+  color: white;
+}
+/* section 4 */
+#section4 {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 50vh;
+  margin: 5% auto 5% auto;
+  background-color: #EAEAE0;
+  border-radius: 10px;
+  box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68);
+  -webkit-box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68);
+  -moz-box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68)
+}
+
+
+/* section 3 */
+.section3 {
+  background-color: #1C4670;
+  color: #fff;
+  padding: 5%;
+}
+h3 {
+  margin: 3% 5%;
+}
+p {
+  margin: 2% 5%;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 4%;
+  background-color: #296831;
+  color: #fff;
+}
+
+@media screen and (min-width: 720px) {
+  /* header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #nav-link {
+    text-decoration: none;
+    color: #fff;
+  }
+  /* section 1 */
+  .section1 {
+    font-size: 200%;
+  }
+  /* section 2 */
+  .section2 {
+    background-color: #278AB0;
+    border-style: none;
+    box-shadow: none;
+  }
+  .input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-wrapper {
+    background-color:#EAEAE0;
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+    padding: 10%;
+    margin: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 140%;
+    box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68);
+  -webkit-box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68);
+  -moz-box-shadow: -9px 9px 14px 0px rgba(0,0,0,0.68);
+  }
+
+  .submit-button {
+    display: block;
+    height: 50px;
+    width: 70%;
+    border-radius: 50px;
+    border-style: none;
+    font-size: 120%;
+    background-color: white;
+    color:#278AB0;
+  }
+  .submit-button:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+  #form-wrapper {
+    font-size: 160%;
+  }
+  .submit-button {
+    width: 100%;
+  }
+}
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <img src="./images/co2footprint.jpeg" alt="logo" class="logo">
+    <h1>Carbon Footprint Calculator</h1>
+    <nav>
+      <ul>
+        <li><a href="#" id="nav-link">Home</a></li>
+        <li><a href="#" id="nav-link">About</a></li>
+        <li><a href="#" id="nav-link">Info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>  
+    <section class="section1">
+      <h2>Measure Your Impact: Discover Your <span class="h2-co2-footprint">Carbon Footprint</span> with Ease</h2>
+    </section>
+
+    <section class="section2">
+      <div id="section2-wrapper">
+        <div class="input-wrapper">
+          <div class="distance-wrapper" id="form-wrapper">
+            <div id="input-label-wrapper">
+              <label for="distance" class="distance">Distance traveled: </label>
+              <input type="text" id="distance" name="vehicle">
+            </div>
+          </div>
+          <div class="vehicle-wrapper" id="form-wrapper">
+            <div id="input-label-wrapper">
+              <label for="vehicle" class="vehicle">Vehicle type (car or motorcycle): </label>
+              <input type="text" id="vehicle" name="vehicle">
+            </div>
+          </div>
+        </div>
+        <button class="submit-button" onclick="submitButton()">Submit</button>
+      </div>
+
+      <section id="section4">
+        <h3>Results: </h3>
+        <p id="distance-results">Distance traveled:</p>
+        <p id="vehicle-results">Vehicle type:</p>
+        <p id="carbon-results">Your Carbon Footprint: </p>
+      </section>
+      </form>
+    </section>
+
+    <section class="section3">
+      <h3>What is a carbon footprint calculator?</h3>
+      <p>A carbon footprint calculator is a tool that allows individuals and organizations
+        to estimate the amount of greenhouse gas emissions they are responsible for. The calculator 
+        takes into account various factors, such as energy use, transportation, food consumption, and 
+        waste management, to provide a comprehensive analysis of one's carbon footprint. By using a carbon footprint calculator, 
+        individuals and organizations can become more aware of their impact on the environment and take steps to reduce their emissions.</p>
+    </section>
+
+  </main>
+  <footer>
+    <p>Viking Hacks 2023</p>
+  </footer>
+  <script>
+    const section2 = document.getElementById("section2-wrapper");
+  const subSection2 = document.getElementById("section4");
+  const distanceResults = document.getElementById("distance-results");
+  const vehicleResults = document.getElementById("vehicle-results");
+  async function submitButton() {
+    const distance = document.getElementById("distance");
+    const vehile = document.getElementById("vehicle");
+    const request = {
+      distance: distance.value,
+      vehicle: vehicle.value
+    }
+    //where you do the fetch reqeust
+    //data == respom
+
+    let data = await fetch("http://127.0.0.1:8000/calculate",{method:"POST",
+    headers: {'X-CSRFToken':document.querySelector('[name=csrfmiddlewaretoken]').value},
+    body: JSON.stringify(request)
+    }).then(response=>response.json()).then(data=> data)
+    // hide .section2
+    section2.style.display = "none";
+    subSection2.style.display = "flex";
+    distanceResults.innerText = `Distance traveled: ${distance.value}`;
+    vehicleResults.innerText = `Vehicle type: ${vehicle.value}`;
+    document.getElementById("carbon-results").innerText = data.co2e
+  }
+  
+  </script>
+</body>
+</html>
